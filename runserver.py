@@ -1,5 +1,7 @@
 from anser import Anser
 
 
-server = Anser(__name__)
-server.run(ip='127.0.0.1', port=8053, debug=True)
+server = Anser(__name__, protocol='udp')
+server.run(ip='127.0.0.1',
+           port=8083,
+           debug=True)
