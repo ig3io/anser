@@ -1,4 +1,5 @@
 import socket
+import bson
 
 
 class Anser(object):
@@ -32,8 +33,9 @@ class Anser(object):
 
 
     def _process(self, data, address):
+        message = bson.loads(data)
         for action in self.actions:
-            action(data, address)
+            action(message, address)
 
 
     def _listen(self):
@@ -44,17 +46,11 @@ class Anser(object):
                     )
         while True:
             data, address = self.socket.recvfrom(self.buffer_size)
-            if self.debug:
-                print "Message received:"
-                print "Address: {0}".format(address)
-                print "Data: " + data
             self._process(data, address)
 
 
     def add_action(self, action, category):
         self.actions.append(action)
-        if self.debug:
-            print "{0} action added".format(action.__name__)
 
 
     def action(self, category):
