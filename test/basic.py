@@ -22,9 +22,11 @@ class BasicTest(unittest.TestCase):
         server = Anser(__file__)
         self.assertFalse(server.debug)
 
+
     def test_creation_explicit_debug(self):
         server = Anser(__file__, debug=True)
         self.assertTrue(server.debug)
+
 
     def test_add_action(self):
         server = Anser(__file__)
@@ -32,6 +34,7 @@ class BasicTest(unittest.TestCase):
         def dummy_action(message, address):
             pass
         self.assertTrue(dummy_action in server.actions)
+
 
     def test_receive(self):
         pass
