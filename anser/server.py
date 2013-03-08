@@ -15,7 +15,9 @@ class Anser(object):
     def __init__(self, name, debug=False):
         """
         Initializes just the basic stuff. Main data structures are
-        initiliazed inside ``run`` method
+        initiliazed inside `run` method.
+
+        Requires a `name` parameter (not used right now)
 
         """
         self.name = name
