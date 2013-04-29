@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import socket
-import bson
+import json
 
 
 class Anser(object):
     """
     A class that models an Anser app. A configurable UDP server with
-    BSON messaging.
+    JSON messaging.
 
     While an Anser object is running on a specific port, each incoming
     UDP message may trigger one or more actions, according to specified
@@ -37,7 +37,7 @@ class Anser(object):
 
 
     def _process(self, data, address):
-        message = bson.loads(data)
+        message = json.loads(data)
         for action in self.actions:
             action(message, address)
 

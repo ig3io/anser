@@ -1,3 +1,3 @@
 Anser
 =====
-UDP Server - BSON Messaging
+UDP Server - JSON Messaging
