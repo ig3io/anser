@@ -2,3 +2,4 @@
 *.swp
 venv
 test/anser
+examples/anser
