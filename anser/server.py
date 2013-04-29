@@ -44,10 +44,8 @@ class Anser(object):
 
     def _listen(self):
         if self.debug:
-            print "Server listening at {0}.{1}".format(
-                        self.ip,
-                        self.port
-                    )
+            print("Server listening at {0}.{1}".format(
+                    self.ip, self.port))
         while True:
             data, address = self.socket.recvfrom(self.buffer_size)
             self._process(data, address)
