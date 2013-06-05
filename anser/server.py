@@ -13,7 +13,7 @@ class Anser(object):
     UDP message may trigger one or more actions, according to specified
     criteria.
 
-    """ 
+    """
     def __init__(self, name, debug=False):
         """
         Initializes just the basic stuff. Main data structures are
