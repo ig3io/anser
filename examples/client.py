@@ -1,16 +1,20 @@
-import json
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import socket
+try:
+    import simplejson as json
+except ImportError:
+    import json
+from anser import Client
+
 
 
 def main():
-    udp_ip = '127.0.0.1'
-    udp_port = 8080
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    message = json.dumps({
-        'body': 'Hello there!',
-        'type': 'default'
+    client = Client(address='127.0.0.1', port=8080, debug=True, default_category='default')
+    client.send({
+        "hello": "there"
         })
-    sock.sendto(message, (udp_ip, udp_port))
 
 
 if __name__ == '__main__':
