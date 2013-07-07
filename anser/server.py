@@ -2,6 +2,7 @@
 
 import socket
 import json
+from . import utils
 
 
 class Anser(object):
@@ -31,7 +32,7 @@ class Anser(object):
         self.ip = ip
         self.port = port
         self.buffer_size = buffer_size
-        self.socket = Anser._get_udp_socket()
+        self.socket = utils.get_udp_socket()
         self.socket.bind((self.ip, self.port))
         self._listen()
 
@@ -48,7 +49,7 @@ class Anser(object):
                     self.ip, self.port))
         while True:
             data, address = self.socket.recvfrom(self.buffer_size)
-            self._process(data, address)
+            self._process(data.decode(), address)
 
 
     def add_action(self, action, category):
@@ -60,8 +61,3 @@ class Anser(object):
             self.add_action(f, category)
             return f
         return decorator
-
-
-    @staticmethod
-    def _get_udp_socket():
-        return socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
