@@ -1,6 +1,6 @@
 Anser
 =====
-[![Build Status](https://travis-ci.org/ignaciocontreras/anser.png)](https://travis-ci.org/ignaciocontreras/anser)
+[![Build Status](https://travis-ci.org/ignc/anser.png)](https://travis-ci.org/ignc/anser)
 
 UDP Server - JSON Messaging
 
