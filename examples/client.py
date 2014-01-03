@@ -9,11 +9,10 @@ except ImportError:
 from anser import Client
 
 
-
 def main():
     client = Client(address='127.0.0.1', port=8080, debug=True, default_category='default')
     client.send({
-        "hello": "there"
+            "hello": "there"
         })
 
 
