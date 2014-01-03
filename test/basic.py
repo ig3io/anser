@@ -6,7 +6,7 @@ class BasicAnserTest(unittest.TestCase):
 
     def test_creation(self):
         server = Anser(__file__)
-        self.assertEquals(server.name, __file__)
+        self.assertEqual(server.name, __file__)
 
     def test_creation_explicit_no_debug(self):
         server = Anser(__file__, debug=False)
@@ -32,8 +32,8 @@ class BasicClientTest(unittest.TestCase):
 
     def test_creation(self):
         client = Client('10.0.0.1', 4000)
-        self.assertEquals(client.address, '10.0.0.1')
-        self.assertEquals(client.port, 4000)
+        self.assertEqual(client.address, '10.0.0.1')
+        self.assertEqual(client.port, 4000)
 
     def test_creation_implicit_no_debug(self):
         client = Client('10.0.0.1', 4000)
